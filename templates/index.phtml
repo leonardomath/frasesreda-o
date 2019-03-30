@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frases Redação Enem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="<?=PATH_HOME?>templates/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="">Frases Enem</a>
+        <a href="nova-frase"><button class="btn_novatarefa">Criar nova frase</button></a>
+    </nav>
+
+    <div class="container">
+      <section class="frases-container">
+        <?php
+          if(Frases::getFrases() != null) {
+            $frases = Frases::getFrases();
+            foreach ($frases as $key => $value) : ?>
+             <div class="frase-box">
+                <p><?=$value['descricao'];?></p>
+             </div>
+          <?php endforeach;
+          } else {
+            echo "Não há frases.";
+          }
+        ?>
+      </section>
+    </div>
+</body>
+</html>

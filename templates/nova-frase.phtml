@@ -1,0 +1,31 @@
+<?php
+    if(isset($_POST['frase']) && !empty($_POST['frase'])) {
+        if(Frases::novaFrase($_POST['frase'])) : ?>
+            <script>alert("Frase cadastrada com sucesso!")</script>
+    <?php endif;
+    }
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nova Frase</title>
+    <link rel="stylesheet" type="text/css" href="<?=PATH_HOME?>templates/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="<?=PATH?>">Frases Enem</a>
+    </nav>
+    <div class="container">
+        <div class="box">
+            <form method="post">
+                <h2>Descreva a frase</h2>
+                <textarea name="frase" autofocus></textarea>
+                <input type="submit" name="acao" value="Criar!">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
